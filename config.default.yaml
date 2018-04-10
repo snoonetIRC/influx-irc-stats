@@ -1,0 +1,22 @@
+irc:
+  nick: StatsBot
+  user: stats
+  server: irc.snoonet.org
+  port: 6697
+  ssl: true
+  sasl:
+    enabled: false
+    mechanism: PLAIN
+    user: ''
+    pass: ''
+
+  interval: 60  # Number of seconds between data points
+
+  connect_commands:
+    - 'JOIN #channel'
+
+database:
+  url: ''
+
+  tags:
+    network: Snoonet

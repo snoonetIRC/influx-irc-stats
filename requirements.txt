@@ -1,0 +1,3 @@
+async-irc
+pyyaml
+influxdb
