@@ -131,8 +131,6 @@ async def run():
                     for key, fut in futures.items()
                 }
 
-                print(data)
-
                 tags = config['database']['tags']
 
                 body = [
