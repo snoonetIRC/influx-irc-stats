@@ -6,6 +6,7 @@ import yaml
 from asyncirc.protocol import IrcProtocol
 from asyncirc.server import Server
 from influxdb import InfluxDBClient
+from influxdb.exceptions import InfluxDBServerError
 from requests import RequestException
 
 
@@ -160,6 +161,8 @@ async def run():
 
                 try:
                     client.write_points(body, tags=tags)
+                except InfluxDBServerError as e:
+                    print(e.args)
                 except RequestException:
                     traceback.print_exc()
 
